@@ -1,7 +1,38 @@
+/* HEADER FLEX CONTAINER */
+header {
+  display: flex;
+  justify-content: space-between; /* pushes left and right apart */
+  align-items: center;            /* vertically centers items */
+  padding: 20px 40px;
+  background: #3e2f2f;
+  color: white;
+}
 
+/* Logo section */
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* space between logo and text */
+}
 
+.logo {
+  width: 40px;
+  height: auto;
+}
 
-.header {
-    display: flex;
-    justify-content: space-between;
+/* Navigation */
+.nav-links {
+  display: flex;       /* horizontal layout */
+  list-style: none;    /* remove bullets */
+  gap: 25px;           /* space between links */
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+}
+
+.nav-links a:hover {
+  color: #d6a85f;      /* subtle coffee accent */
 }
