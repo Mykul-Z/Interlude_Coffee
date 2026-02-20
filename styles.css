@@ -1,14 +1,23 @@
-/* HEADER FLEX CONTAINER */
+
+/* Theme applicable to the entire webpage and all sub pages */
+body {
+  background-color: black;   /* NEW */
+  color: white;              /* NEW */
+  font-family: 'Interlude', sans-serif;
+}
+
+
+
+/* HEADER */
 header {
   display: flex;
   justify-content: space-between; /* pushes left and right apart */
   align-items: center;            /* vertically centers items */
   padding: 20px 40px;
-  background: #3e2f2f;
-  color: white;
+  border-bottom: 1px solid #333;
 }
 
-/* Logo section */
+/* HEADER-LOGO */
 .logo-container {
   display: flex;
   align-items: center;
@@ -20,7 +29,7 @@ header {
   height: auto;
 }
 
-/* Navigation */
+/* HEADER-NAVIGATION_BAR*/
 .nav-links {
   display: flex;       /* horizontal layout */
   list-style: none;    /* remove bullets */
@@ -35,4 +44,97 @@ header {
 
 .nav-links a:hover {
   color: #d6a85f;      /* subtle coffee accent */
+}
+
+/* FOOTER */
+footer {
+  display: flex;              
+  padding: 40px;
+  border-top: 1px solid #333; /* optional subtle divider */
+}
+
+.footer-left,
+.footer-right {
+  flex: 1;                    /* NEW → equal width */
+}
+
+.footer-right {
+  display: flex;              /* NEW */
+}
+
+.footer-hours,
+.footer-contact {
+  flex: 1;                    /* NEW → equal width */
+}
+
+/* MAIN SECTIONS */
+main {
+  display: flex;              
+  flex-direction: column;     
+}
+
+.section {
+  padding: 80px 40px;
+}
+
+
+/* ABOUT US SECTION */
+.about-section {
+  display: flex;          /* NEW */
+  align-items: center;    /* NEW */
+  padding: 80px 40px;
+  gap: 60px;              /* NEW */
+}
+
+.about-left {
+  flex: 1.5;   /* UPDATED */
+}
+
+.about-right {
+  flex: 1;
+}
+
+.about-left img {
+  width: 100%;            /* NEW */
+  height: auto;
+  display: block;
+}
+
+.about-left img {
+  width: 100%;
+  border-radius: 8px;   /* NEW */
+}
+
+/* FEATURED DRINKS SECTION */
+
+/* Entire section */
+.featured-section {
+  padding: 80px 40px;
+  text-align: center;   /* centers the title */
+}
+
+/* Title section */
+.featured-title {
+  margin-bottom: 50px;
+}
+
+/* Horizontal container for drink cards */
+.featured-container {
+  display: flex;
+  flex-wrap: wrap;        /* NEW — allows new rows */
+  gap: 40px;  
+  justify-content: flex-start; 
+}
+
+/* Each drink card (container within horizontal container */
+.drink-card {
+  flex: 0 0 calc(50% - 20px);
+}
+
+/* Drink Images */
+.drink-card img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  margin-bottom: 20px;
 }
