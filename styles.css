@@ -138,3 +138,55 @@ main {
   object-fit: cover;
   margin-bottom: 20px;
 }
+
+/* IMAGE CAROUSEL */
+
+.music-gallery-section {
+  padding: 80px 40px;
+  text-align: center;
+  background-color: #0f0f0f; /* consistent dark theme */
+}
+
+.section-title {
+  margin-bottom: 20px;
+  font-size: 2rem;
+  color: white;
+}
+
+.spotify-link a {
+  color: #1db954; /* Spotify green */
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.spotify-link a:hover {
+  text-decoration: underline;
+  color: #1ed760;
+}
+
+/* Carousel */
+.carousel {
+  overflow: hidden;
+  width: 100%;
+  margin-top: 40px;
+}
+
+/* Track of images */
+.carousel-track {
+  display: flex;
+  gap: 20px;
+}
+
+/* Each image card */
+.carousel-item {
+  flex: 0 0 auto;  /* prevents shrinking */
+  width: 250px;    /* adjust size */
+}
+
+.carousel-item img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
