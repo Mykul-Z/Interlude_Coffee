@@ -1,25 +1,23 @@
 // Select the track
+// Only run carousel if the carousel exists on the page
 const track = document.querySelector('.carousel-track');
-let scrollAmount = 0;        // how much the track has moved
-const speed = 1;             // pixels per frame, adjust for faster/slower
+if (track) {
+    track.innerHTML += track.innerHTML;
 
-// Duplicate the track content for seamless looping
-track.innerHTML += track.innerHTML;  // duplicate all carousel items
+    let scrollAmount = 0;
+    const speed = 1;
 
-function loopCarousel() {
-  scrollAmount += speed;
+    function loopCarousel() {
+        scrollAmount += speed;
+        if (scrollAmount >= track.scrollWidth / 2) {
+            scrollAmount = 0;
+        }
+        track.style.transform = `translateX(-${scrollAmount}px)`;
+        requestAnimationFrame(loopCarousel);
+    }
 
-  // reset scroll when it reaches half of the duplicated track
-  if (scrollAmount >= track.scrollWidth / 2) {
-    scrollAmount = 0;
-  }
-
-  track.style.transform = `translateX(-${scrollAmount}px)`;
-  requestAnimationFrame(loopCarousel); // call next frame
+    loopCarousel();
 }
-
-// Start the loop
-loopCarousel();
 
 
 // Only run on archives page
@@ -28,17 +26,17 @@ if (document.querySelector(".archive-list")) {
     const archiveData = [
         {
             title: "January 2026 – Vinyl Night",
-            image: "../assets/vinyl-night.jpg",
+            image: "../assets/Images/vinyl-night.jpg",        // FIX: updated path
             description: "An intimate evening featuring local DJs spinning rare soul and jazz records."
         },
         {
             title: "December 2025 – Espresso Workshop",
-            image: "../assets/espresso-workshop.jpg",
+            image: "../assets/Images/espresso-workshop.jpg",  // FIX: updated path
             description: "A hands-on workshop exploring extraction techniques and latte art fundamentals."
         },
         {
             title: "November 2025 – Poetry Evening",
-            image: "../assets/poetry-night.jpg",
+            image: "../assets/Images/poetry-night.jpg",       // FIX: updated path
             description: "Local writers gathered for a candle-lit reading surrounded by soft jazz and coffee."
         }
     ];
@@ -51,14 +49,11 @@ if (document.querySelector(".archive-list")) {
 
     listItems.forEach(item => {
         item.addEventListener("click", () => {
-
-            const id = item.getAttribute("data-id");
+            const id = parseInt(item.getAttribute("data-id")); // FIX: parseInt
             const selected = archiveData[id];
-
             titleElement.textContent = selected.title;
             imageElement.src = selected.image;
             descriptionElement.textContent = selected.description;
-
         });
     });
 
