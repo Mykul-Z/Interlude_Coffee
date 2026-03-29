@@ -25,17 +25,22 @@ if (document.querySelector(".archive-list")) {
 
     const archiveData = [
         {
-            title: "January 2026 – Vinyl Night",
-            image: "../assets/Images/vinyl-night.jpg",        // FIX: updated path
+            title: "black sesame",
+            image: "../assets/Images/Archives Drinks/BlackSesame.jpg",
             description: "An intimate evening featuring local DJs spinning rare soul and jazz records."
         },
         {
-            title: "December 2025 – Espresso Workshop",
-            image: "../assets/Images/espresso-workshop.jpg",  // FIX: updated path
+            title: "peach americano",
+            image: "../assets/Images/Archives Drinks/PeachAmericano.jpg",  // FIX: updated path
             description: "A hands-on workshop exploring extraction techniques and latte art fundamentals."
         },
         {
-            title: "November 2025 – Poetry Evening",
+            title: "rose matcha",
+            image: "../assets/Images/poetry-night.jpg",       // FIX: updated path
+            description: "Local writers gathered for a candle-lit reading surrounded by soft jazz and coffee."
+        },
+        {
+            title: "coconut pandan latte",
             image: "../assets/Images/poetry-night.jpg",       // FIX: updated path
             description: "Local writers gathered for a candle-lit reading surrounded by soft jazz and coffee."
         }
