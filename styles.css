@@ -6,11 +6,61 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: 'FoundersGrotesk';
+  src: url('assets/Fonts/Founders_Grotesk/FoundersGrotesk-Light.otf') format('opentype');
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'FoundersGrotesk';
+  src: url('assets/Fonts/Founders_Grotesk/FoundersGrotesk-Regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'FoundersGrotesk';
+  src: url('assets/Fonts/Founders_Grotesk/FoundersGrotesk-Medium.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'FoundersGrotesk';
+  src: url('assets/Fonts/Founders_Grotesk/FoundersGrotesk-Semibold.otf') format('opentype');
+  font-weight: 600;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'FoundersGrotesk';
+  src: url('assets/Fonts/Founders_Grotesk/FoundersGrotesk-Bold.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'FreightDispLight';
+  src: url('assets/Fonts/Freight Disp Light.otf') format('opentype');
+  font-weight: 300;
+  font-style: normal;
+}
+
 /* Theme applicable to the entire webpage and all sub pages */
 body {
   background-color: black;
   color: white;
   font-family: 'FreightDisp', serif;
+}
+
+html {
+  font-size: min(calc(100vw / 1440 * 16), 16px);
+}
+
+h1 {
+  font-size: 6rem;
+}
+
+h2 {
+  font-size: 4rem;
 }
 
 
@@ -20,15 +70,21 @@ header {
   display: flex;
   justify-content: space-between; /* pushes left and right apart */
   align-items: center;            /* vertically centers items */
-  padding: 20px 40px;
+  padding: 1.25rem 2.5rem;
   border-bottom: 1px solid #333;
+  font-family: 'FoundersGrotesk', sans-serif;
 }
 
 /* HEADER-LOGO */
+.logo-container h1 {
+  font-family: 'FreightDisp', serif;
+  font-size: initial;
+}
+
 .logo-container {
   display: flex;
   align-items: center;
-  gap: 10px; /* space between logo and text */
+  gap: 0.625rem; /* space between logo and text */
 }
 
 .logo-container a {
@@ -37,15 +93,15 @@ header {
 }
 
 .logo {
-  width: 40px;
-  height: auto;
+  width: 3.1875rem;
+  height: 3.1875rem;
 }
 
 /* HEADER-NAVIGATION_BAR*/
 .nav-links {
   display: flex;       /* horizontal layout */
   list-style: none;    /* remove bullets */
-  gap: 25px;           /* space between links */
+  gap: 1.5625rem;      /* space between links */
 }
 
 .nav-links a {
@@ -60,33 +116,33 @@ header {
 
 /* FOOTER */
 footer {
-  display: flex;              
-  padding: 40px;
+  display: flex;
+  padding: 2.5rem;
   border-top: 1px solid #333; /* optional subtle divider */
 }
 
 .footer-left,
 .footer-right {
-  flex: 1;                    /* NEW → equal width */
+  flex: 1;
 }
 
 .footer-right {
-  display: flex;              /* NEW */
+  display: flex;
 }
 
 .footer-hours,
 .footer-contact {
-  flex: 1;                    /* NEW → equal width */
+  flex: 1;
 }
 
 /* MAIN SECTIONS */
 main {
-  display: flex;              
-  flex-direction: column;     
+  display: flex;
+  flex-direction: column;
 }
 
 .section {
-  padding: 80px 40px;
+  padding: 5rem 2.5rem;
 }
 
 
@@ -94,12 +150,12 @@ main {
 .about-section {
   display: flex;
   align-items: center;
-  padding: 80px 40px;
-  gap: 60px;
+  padding: 5rem 2.5rem;
+  gap: 3.75rem;
 }
 
 .about-left {
-  flex: 1.5;   /* UPDATED */
+  flex: 1.5;
 }
 
 .about-right {
@@ -107,76 +163,76 @@ main {
 }
 
 .about-left img {
-  width: 100%;            /* NEW */
+  width: 100%;
   height: auto;
   display: block;
 }
 
 .about-left img {
   width: 100%;
-  border-radius: 8px;   /* NEW */
+  border-radius: 0.5rem;
 }
 
 /* FEATURED DRINKS SECTION */
 
 /* Entire section */
 .featured-section {
-  padding: 80px 260px;
+  padding: 5rem 16.25rem;
   text-align: center;
 }
 
 /* Title section */
 .featured-title {
-  margin-bottom: 50px;
+  margin-bottom: 3.125rem;
 }
 
 /* Horizontal container for drink cards */
 .featured-container {
   display: flex;
-  gap: 40px;
+  gap: 2.5rem;
   justify-content: flex-start;
   align-items: flex-start;
 }
 
 /* Taller wrapper around each drink card */
 .drink-card-wrapper {
-  flex: 0 0 calc(50% - 20px);
+  flex: 0 0 calc(50% - 1.25rem);
   display: flex;
   flex-direction: column;
 }
 
 .drink-card-wrapper.right {
-  padding-top: 120px;
+  padding-top: 7.5rem;
 }
 
 /* Each drink card */
 .drink-card {
-  width: 100%;
+  width: 24.5625rem;
   text-align: left;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /* Drink Images */
 .drink-card img {
-  width: 100%;
-  aspect-ratio: 2 / 3;
+  width: 24.5625rem;
+  height: 30.9375rem;
   object-fit: cover;
-  margin-bottom: 20px;
-  border-radius: 8px;
+  margin-bottom: 1.25rem;
+  border-radius: 0.5rem;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /* IMAGE CAROUSEL */
 
 .music-gallery-section {
-  padding: 80px 40px;
+  padding: 5rem 2.5rem;
   text-align: center;
   background-color: #0f0f0f; /* consistent dark theme */
 }
 
-.section-title {
-  margin-bottom: 20px;
-  font-size: 2rem;
-  color: white;
-}
 
 .spotify-link a {
   color: #1db954; /* Spotify green */
@@ -193,26 +249,26 @@ main {
 .carousel {
   overflow: hidden;
   width: 100%;
-  margin-top: 40px;
+  margin-top: 2.5rem;
 }
 
 /* Track of images */
 .carousel-track {
   display: flex;
-  gap: 20px;
+  gap: 1.25rem;
 }
 
 /* Each image card */
 .carousel-item {
-  flex: 0 0 auto;  /* prevents shrinking */
-  width: 250px;    /* adjust size */
+  flex: 0 0 auto;
+  width: 15.625rem;
 }
 
 .carousel-item img {
   width: 100%;
-  height: 150px;
+  height: 9.375rem;
   object-fit: cover;
-  border-radius: 8px;
+  border-radius: 0.5rem;
 }
 
 
@@ -220,45 +276,65 @@ main {
 /* ARCHIVES PAGE STYLES */
 
 .archive-top {
-    padding: 80px 40px;
+    padding: 5rem 2.5rem 5rem 18.1875rem;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
 }
 
 .archive-title {
     text-align: left;
-    margin-bottom: 40px;
+    margin-bottom: 2.5rem;
     font-size: 2.5rem;
 }
 
 /* Layout container */
 .archive-content {
     display: flex;
-    justify-content: center;      /* centers image+text block */
-    align-items: flex-end;        /* aligns description to bottom of image */
-    gap: 60px;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 3.75rem;
+    align-self: center;
 }
 
 /* Image styling */
 .archive-image img {
-    max-width: 500px;
+    max-width: 31.25rem;
     width: 100%;
     height: auto;
     display: block;
+    transition: opacity 0.25s ease;
 }
 
 /* Description styling */
 .archive-description {
-    max-width: 400px;
+    max-width: 25rem;
     font-size: 1rem;
     line-height: 1.6;
+    transition: opacity 0.25s ease;
 }
 
+/* Archive title transition */
+#archive-title {
+    font-family: 'FreightDispLight', serif;
+    transition: opacity 0.25s ease;
+    position: relative;
+    z-index: 1;
+    margin-bottom: -3rem;
+    max-width: calc(50vw - 24.71875rem);
+}
+
+/* Fade out state */
+.--fade-out {
+    opacity: 0 !important;
+}
 /* ===== BOTTOM ARCHIVE NAV ===== */
 
 .archive-navigation {
-    padding: 60px 40px;
+    position: fixed;
+    bottom: 3.75rem;
+    left: 6.1875rem;
+    width: 12rem;
     display: flex;
 }
 
@@ -268,14 +344,35 @@ main {
 }
 
 .archive-list li {
-    margin-bottom: 20px;
+    margin-bottom: 1.25rem;
     cursor: pointer;
-    font-size: 1rem;
+    font-size: 1.25rem;
+    opacity: 0.3;
+    transition: opacity 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.archive-list li::before {
+    content: '';
+    width: 0.4rem;
+    height: 0.4rem;
+    border-radius: 50%;
+    background-color: white;
+    flex-shrink: 0;
+    opacity: 0;
     transition: opacity 0.3s ease;
 }
 
-.archive-list li:hover {
-    opacity: 0.5;
+.archive-list li:hover,
+.archive-list li.--is-active {
+    opacity: 1;
+}
+
+.archive-list li:hover::before,
+.archive-list li.--is-active::before {
+    opacity: 1;
 }
 
 /* Top section: title + description on left, image on right */
@@ -283,15 +380,15 @@ main {
     display: flex;
     align-items: flex-start;
     justify-content: flex-start;
-    gap: 60px;
-    padding: 80px 40px;
+    gap: 3.75rem;
+    padding: 5rem 2.5rem;
 }
 
 .contact-top-left {
     flex: 0 0 auto;
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 1.25rem;
 }
 
 .contact-title {
@@ -304,7 +401,7 @@ main {
     font-size: 1rem;
     line-height: 1.7;
     color: #ccc;
-    max-width: 480px;
+    max-width: 30rem;
     margin: 0;
 }
 
@@ -313,16 +410,16 @@ main {
 }
 
 .contact-top-right img {
-    width: 250px;
+    width: 15.625rem;
     height: auto;
     display: block;
-    border-radius: 8px;
+    border-radius: 0.5rem;
     object-fit: cover;
 }
 
 /* Bottom section placeholder */
 .contact-bottom {
-    padding: 60px 40px;
+    padding: 3.75rem 2.5rem;
 }
 
 
@@ -333,7 +430,7 @@ main {
 .events-main {
     display: flex;
     flex-direction: column;
-    height: calc(100vh - 81px); /* subtract header height */
+    height: calc(100vh - 5.0625rem); /* subtract header height */
 }
 
 /* TOP: hero image takes 2/3 of the height */
@@ -352,10 +449,9 @@ main {
 
 .events-hero-title {
     position: absolute;
-    bottom: 40px;
-    left: 40px;
+    bottom: 2.5rem;
+    left: 2.5rem;
     margin: 0;
-    font-size: 3rem;
     font-weight: 400;
     color: white;
 }
@@ -373,14 +469,14 @@ main {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 30px 40px;
+    padding: 1.875rem 2.5rem;
     border-right: 1px solid #333;
 }
 
 .events-featured-title {
     font-size: 1.5rem;
     font-weight: 400;
-    margin: 0 0 16px 0;
+    margin: 0 0 1rem 0;
 }
 
 .events-featured-description {
@@ -432,7 +528,7 @@ main {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 10px;
+    padding: 0.625rem;
     border-right: 1px solid #333;
     text-align: center;
     line-height: 1.2;
@@ -449,11 +545,11 @@ main {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 10px 16px;
+    padding: 0.625rem 1rem;
 }
 
 .event-card-info h3 {
-    margin: 0 0 4px 0;
+    margin: 0 0 0.25rem 0;
     font-size: 0.95rem;
     font-weight: 500;
 }
@@ -463,9 +559,3 @@ main {
     font-size: 0.85rem;
     color: #ccc;
 }
-
-
-
-
-
-
