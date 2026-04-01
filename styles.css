@@ -345,10 +345,11 @@ main {
 /* Archive title transition */
 #archive-title {
     font-family: 'FreightDispLight', serif;
+    font-size: 8rem;
+    white-space: nowrap;
     position: relative;
     z-index: 1;
     margin-bottom: -3rem;
-    max-width: calc(50vw - 24.71875rem);
 }
 
 #archive-title.--slide-in {
@@ -566,7 +567,6 @@ main {
     flex-direction: column;
     justify-content: center;
     padding: 1.875rem 2.5rem;
-    border-right: 1px solid #333;
 }
 
 .events-featured-title {

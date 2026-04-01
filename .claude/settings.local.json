@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(mv BlackSesame.jpg Feature-BlackSesame.jpg)",
+      "Bash(mv PeachAmericano.jpg Feature-PeachAmericano.jpg)",
+      "Bash(mv RoseMatcha.jpg Feature-RoseMatcha.jpg)",
+      "Bash(mv \"/Users/michaelzeng/repos/Interlude_Coffee/assets/Images/Feature-ChestnutTiramisu.jpg\" \"/Users/michaelzeng/repos/Interlude_Coffee/assets/Images/Archives Drinks/Feature-ChestnutTiramisu.jpg\")"
+    ]
+  }
+}

@@ -25,23 +25,28 @@ if (document.querySelector(".archive-list")) {
 
     const archiveData = [
         {
+            title: "chestnut tiramisu",
+            image: "../assets/Images/Archives Drinks/Feature-ChestnutTiramisu.jpg",
+            description: "house-made chestnut syrup, topped with a light mascarpone cream foam, finished with cocoa powder and a ladyfinger."
+        },
+        {
             title: "black sesame",
-            image: "../assets/Images/Archives Drinks/BlackSesame.jpg",
+            image: "../assets/Images/Archives Drinks/Feature-BlackSesame.jpg",
             description: "ADD description of black sesame drink"
         },
         {
             title: "peach americano",
-            image: "../assets/Images/Archives Drinks/PeachAmericano.jpg",  // FIX: updated path
+            image: "../assets/Images/Archives Drinks/Feature-PeachAmericano.jpg",
             description: "ADD description of peach americano drink"
         },
         {
             title: "rose matcha",
-            image: "../assets/Images/Archives Drinks/RoseMatcha.jpg",       // FIX: updated path
+            image: "../assets/Images/Archives Drinks/Feature-RoseMatcha.jpg",
             description: "ADD description of rose drink"
         },
         {
-            title: "coconut pandan latte",
-            image: "../assets/Images/poetry-night.jpg",       // FIX: updated path
+            title: "coconut pandan",
+            image: "../assets/Images/Archives Drinks/Feature-ChestnutTiramisu.jpg",
             description: "ADD description of coconut pandan latte"
         }
     ];
@@ -83,7 +88,7 @@ if (document.querySelector(".archive-list")) {
 
     // Set first item active on load
     if (listItems.length > 0) {
-        listItems[0].classList.add("--is-active");
+        setActive(listItems[0]);
     }
 
     listItems.forEach(item => {
