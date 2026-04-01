@@ -447,6 +447,10 @@ main {
     gap: 1.5rem;
 }
 
+.form-row--half {
+    width: calc(50% - 0.75rem);
+}
+
 .form-field {
     flex: 1;
     display: flex;
