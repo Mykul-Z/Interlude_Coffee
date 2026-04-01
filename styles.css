@@ -38,6 +38,13 @@
 }
 
 @font-face {
+  font-family: 'SuisseIntl';
+  src: url('assets/Fonts/suisse-font-family/SuisseIntlTrial-Regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
   font-family: 'FreightDispLight';
   src: url('assets/Fonts/Freight Disp Light.otf') format('opentype');
   font-weight: 300;
@@ -117,13 +124,18 @@ header {
 /* FOOTER */
 footer {
   display: flex;
-  padding: 2.5rem;
-  border-top: 1px solid #333; /* optional subtle divider */
+  padding: 2.5rem 2.5rem 0 2.5rem;
+  border-top: 1px solid #333;
+  align-items: flex-end;
 }
 
 .footer-left,
 .footer-right {
   flex: 1;
+}
+
+.footer-left h2 {
+  margin: 0;
 }
 
 .footer-right {
@@ -133,6 +145,7 @@ footer {
 .footer-hours,
 .footer-contact {
   flex: 1;
+  font-family: 'FoundersGrotesk', sans-serif;
 }
 
 /* MAIN SECTIONS */
@@ -235,14 +248,19 @@ main {
 
 
 .spotify-link a {
-  color: #1db954; /* Spotify green */
+  display: inline-block;
+  background-color: transparent;
+  border: 1px solid #555;
+  color: white;
+  font-family: 'FoundersGrotesk', sans-serif;
+  font-size: 1rem;
+  padding: 0.75rem 2rem;
   text-decoration: none;
-  font-weight: bold;
+  transition: border-color 0.3s ease;
 }
 
 .spotify-link a:hover {
-  text-decoration: underline;
-  color: #1ed760;
+  border-color: white;
 }
 
 /* Carousel */
@@ -375,51 +393,117 @@ main {
     opacity: 1;
 }
 
-/* Top section: title + description on left, image on right */
+/* CONTACT PAGE */
 .contact-top {
     display: flex;
-    align-items: flex-start;
-    justify-content: flex-start;
-    gap: 3.75rem;
-    padding: 5rem 2.5rem;
-}
-
-.contact-top-left {
-    flex: 0 0 auto;
-    display: flex;
     flex-direction: column;
+    padding: 5rem 2.5rem;
     gap: 1.25rem;
 }
 
 .contact-title {
-    font-size: 2.5rem;
     font-weight: 400;
     margin: 0;
+    line-height: 1;
 }
 
 .contact-description {
     font-size: 1rem;
-    line-height: 1.7;
+    line-height: 1.2;
     color: #ccc;
-    max-width: 30rem;
     margin: 0;
 }
 
-.contact-top-right {
-    flex: 0 0 auto;
-}
 
-.contact-top-right img {
-    width: 15.625rem;
-    height: auto;
-    display: block;
-    border-radius: 0.5rem;
-    object-fit: cover;
-}
-
-/* Bottom section placeholder */
+/* Bottom section - contact form */
 .contact-bottom {
     padding: 3.75rem 2.5rem;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    width: 62.5%;
+    margin-left: auto;
+}
+
+.form-row {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.form-field {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.form-field label {
+    font-size: 0.875rem;
+    color: #ccc;
+    font-family: 'FoundersGrotesk', sans-serif;
+}
+
+.form-field input,
+.form-field select,
+.form-field textarea {
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid #555;
+    color: white;
+    font-family: 'FoundersGrotesk', sans-serif;
+    font-size: 1rem;
+    padding: 0.5rem 0;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.form-field input::placeholder,
+.form-field textarea::placeholder {
+    font-family: 'SuisseIntl', sans-serif;
+    text-transform: uppercase;
+}
+
+.form-field input:focus,
+.form-field select:focus,
+.form-field textarea:focus {
+    border-bottom-color: white;
+}
+
+.form-field select option {
+    background-color: black;
+    color: white;
+}
+
+.form-field textarea {
+    resize: none;
+    height: 8rem;
+}
+
+.form-field--full {
+    flex: 1;
+}
+
+.form-submit {
+    background-color: transparent;
+    border: 1px solid #555;
+    color: white;
+    font-family: 'FoundersGrotesk', sans-serif;
+    font-size: 1rem;
+    padding: 0.75rem 2rem;
+    cursor: pointer;
+    transition: border-color 0.3s ease, color 0.3s ease;
+}
+
+.form-submit:hover {
+    border-color: white;
+}
+
+.form-submit:disabled {
+    opacity: 0.5;
+    cursor: default;
 }
 
 

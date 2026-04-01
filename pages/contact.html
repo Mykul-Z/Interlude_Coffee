@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact | Interlude Coffee</title>
     <link rel="stylesheet" href="../styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 </head>
 
 <body>
@@ -31,25 +32,65 @@
 
 <main>
 
-    <!-- SECTION 1: TITLE, DESCRIPTION, IMAGE -->
+    <!-- SECTION 1: TOP -->
     <section class="contact-top">
-
-        <div class="contact-top-left">
-            <h1 class="contact-title">get in touch</h1>
-            <p class="contact-description">
-                We'd love to hear from you. Whether you have a question about our menu, 
-                want to book a private event, or just want to say hello — reach out anytime.
-            </p>
-        </div>
-
-        <div class="contact-top-right">
-            <img src="test.png" alt="Interlude Coffee interior">
-        </div>
-
+        <h2 class="contact-title">where coffee <br> meets community </h2>
+        <p class="contact-description">
+            Got something in mind? <br>
+            We'd love to hear about it 
+        </p>
     </section>
 
-    <!-- SECTION 2: CONTACT DETAILS (to be built out) -->
+    <!-- SECTION 2: BOTTOM - Contact Form -->
     <section class="contact-bottom">
+        <form class="contact-form">
+
+            <!-- LINE 1: First Name + Last Name -->
+            <div class="form-row">
+                <div class="form-field">
+                    <input type="text" id="first-name" name="first_name" placeholder="First Name">
+                </div>
+                <div class="form-field">
+                    <input type="text" id="last-name" name="last_name" placeholder="Last Name">
+                </div>
+            </div>
+
+            <!-- LINE 2: Email + Phone Number -->
+            <div class="form-row">
+                <div class="form-field">
+                    <input type="email" id="email" name="email" placeholder="Email">
+                </div>
+                <div class="form-field">
+                    <input type="tel" id="phone" name="phone" placeholder="Phone Number">
+                </div>
+            </div>
+
+            <!-- LINE 3: Nature of Inquiry -->
+            <div class="form-row">
+                <div class="form-field">
+                    <select id="inquiry" name="inquiry">
+                        <option value="" disabled selected>Select an option</option>
+                        <option value="general">General Question</option>
+                        <option value="event">Private Event</option>
+                        <option value="menu">Menu Inquiry</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- LINE 4: Message -->
+            <div class="form-row">
+                <div class="form-field form-field--full">
+                    <textarea id="message" name="message" placeholder="Message"></textarea>
+                </div>
+            </div>
+
+            <!-- SUBMIT -->
+            <div class="form-row">
+                <button type="submit" class="form-submit">Send Message</button>
+            </div>
+
+        </form>
     </section>
 
 </main>
@@ -69,3 +110,31 @@
         <div class="footer-contact">
             <h3>Contact</h3>
             <p>Email: <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="aec7c0c8c1eec7c0dacbdcc2dbcacbcdc1c8c8cbcb80cdc1c3">[email&#160;protected]</a></p>
+            <p>Phone: (123) 456-7890</p>
+        </div>
+    </div>
+</footer>
+
+<script>
+    emailjs.init('MaeYHsg7GOtJUalWP');
+
+    document.querySelector('.contact-form').addEventListener('submit', function(e) {
+        e.preventDefault();
+
+        const btn = document.querySelector('.form-submit');
+        btn.textContent = 'Sending...';
+        btn.disabled = true;
+
+        emailjs.sendForm('service_xfg7kgo', 'template_jpfec8h', this)
+            .then(() => {
+                btn.textContent = 'Message Sent';
+                this.reset();
+            })
+            .catch(() => {
+                btn.textContent = 'Failed — Try Again';
+                btn.disabled = false;
+            });
+    });
+</script>
+</body>
+</html>
