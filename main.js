@@ -60,20 +60,24 @@ if (document.querySelector(".archive-list")) {
         const id = parseInt(item.getAttribute("data-id"));
         const selected = archiveData[id];
 
-        // Fade out
-        titleElement.classList.add("--fade-out");
-        imageElement.classList.add("--fade-out");
+        // Fade out description
         descriptionElement.classList.add("--fade-out");
 
         setTimeout(() => {
-            titleElement.textContent = selected.title;
-            imageElement.src = selected.image;
             descriptionElement.textContent = selected.description;
-
-            // Fade in
-            titleElement.classList.remove("--fade-out");
-            imageElement.classList.remove("--fade-out");
             descriptionElement.classList.remove("--fade-out");
+
+            // Slide in title from bottom
+            titleElement.classList.remove("--slide-in");
+            void titleElement.offsetWidth;
+            titleElement.textContent = selected.title;
+            titleElement.classList.add("--slide-in");
+
+            // Slide in image from bottom
+            imageElement.classList.remove("--slide-in");
+            void imageElement.offsetWidth;
+            imageElement.src = selected.image;
+            imageElement.classList.add("--slide-in");
         }, 250);
     }
 

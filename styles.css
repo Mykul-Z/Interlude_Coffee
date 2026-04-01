@@ -115,10 +115,11 @@ header {
   text-decoration: none;
   color: white;
   font-weight: 500;
+  transition: opacity 0.3s ease;
 }
 
-.nav-links a:hover {
-  color: #d6a85f;      /* subtle coffee accent */
+.nav-links a.active {
+  opacity: 0.3;
 }
 
 /* FOOTER */
@@ -179,10 +180,6 @@ main {
   width: 100%;
   height: auto;
   display: block;
-}
-
-.about-left img {
-  width: 100%;
   border-radius: 0.5rem;
 }
 
@@ -300,11 +297,6 @@ main {
     align-items: flex-start;
 }
 
-.archive-title {
-    text-align: left;
-    margin-bottom: 2.5rem;
-    font-size: 2.5rem;
-}
 
 /* Layout container */
 .archive-content {
@@ -316,12 +308,30 @@ main {
 }
 
 /* Image styling */
+.archive-image {
+    overflow: hidden;
+}
+
 .archive-image img {
     max-width: 31.25rem;
     width: 100%;
     height: auto;
     display: block;
-    transition: opacity 0.25s ease;
+}
+
+@keyframes slideInFromBottom {
+    from {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.archive-image img.--slide-in {
+    animation: slideInFromBottom 0.667s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
 }
 
 /* Description styling */
@@ -335,11 +345,14 @@ main {
 /* Archive title transition */
 #archive-title {
     font-family: 'FreightDispLight', serif;
-    transition: opacity 0.25s ease;
     position: relative;
     z-index: 1;
     margin-bottom: -3rem;
     max-width: calc(50vw - 24.71875rem);
+}
+
+#archive-title.--slide-in {
+    animation: slideInFromBottom 0.667s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
 }
 
 /* Fade out state */
@@ -440,11 +453,6 @@ main {
     gap: 0.5rem;
 }
 
-.form-field label {
-    font-size: 0.875rem;
-    color: #ccc;
-    font-family: 'FoundersGrotesk', sans-serif;
-}
 
 .form-field input,
 .form-field select,
@@ -479,7 +487,8 @@ main {
 
 .form-field textarea {
     resize: none;
-    height: 8rem;
+    height: 2.5rem;
+    overflow: hidden;
 }
 
 .form-field--full {
@@ -533,7 +542,7 @@ main {
 
 .events-hero-title {
     position: absolute;
-    bottom: 2.5rem;
+    bottom: 0;
     left: 2.5rem;
     margin: 0;
     font-weight: 400;
@@ -545,6 +554,9 @@ main {
     flex: 1;
     display: flex;
     border-top: 1px solid #333;
+    padding: 2.5rem 2.5rem 2.5rem 0;
+    gap: 2.5rem;
+    align-items: center;
 }
 
 /* LEFT: featured event title + description */
@@ -577,13 +589,10 @@ main {
     aspect-ratio: 1 / 1;
     display: flex;
     flex-direction: column;
-    border-right: 1px solid #333;
+    border: 1px solid white;
     overflow: hidden;
 }
 
-.event-card:last-child {
-    border-right: none;
-}
 
 /* Top 3/4 of card: image */
 .event-card-image {
@@ -602,7 +611,7 @@ main {
 .event-card-details {
     flex: 1;
     display: flex;
-    border-top: 1px solid #333;
+    border-top: 1px solid white;
 }
 
 /* Left half: date */
@@ -613,7 +622,7 @@ main {
     justify-content: center;
     align-items: center;
     padding: 0.625rem;
-    border-right: 1px solid #333;
+    border-right: 1px solid white;
     text-align: center;
     line-height: 1.2;
 }
